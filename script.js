@@ -12,10 +12,10 @@ document.getElementById('connect').addEventListener('click', async () => {
         const service = await server.getPrimaryService('battery_service');
         characteristic = await service.getCharacteristic('battery_level');
 
-        document.getElementById('status').innerText = "Estado: Conectado";
+        document.getElementById('status').innerText = "Status: Connected";
     } catch (error) {
         console.log(error);
-        document.getElementById('status').innerText = "Estado: Error al conectar";
+        document.getElementById('status').innerText = "Status: Connection failed";
     }
 });
 
@@ -23,6 +23,7 @@ document.getElementById('forward').addEventListener('click', () => sendCommand('
 document.getElementById('backward').addEventListener('click', () => sendCommand('B'));
 document.getElementById('left').addEventListener('click', () => sendCommand('L'));
 document.getElementById('right').addEventListener('click', () => sendCommand('R'));
+document.getElementById('stop').addEventListener('click', () => sendCommand('S'));
 
 function sendCommand(command) {
     if (characteristic) {
