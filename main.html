@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV3 Control</title>
+    <title>EV3 Remote Control</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <button id="forward">Adelante</button>
-        <button id="backward">Atrás</button>
-        <button id="left">Izquierda</button>
-        <button id="right">Derecha</button>
-        <p id="status">Estado: No conectado</p>
-        <button id="connect">Conectar Bluetooth</button>
+        <div id="controls">
+            <button id="forward">▲</button>
+            <div>
+                <button id="left">◄</button>
+                <button id="stop">⏹</button>
+                <button id="right">►</button>
+            </div>
+            <button id="backward">▼</button>
+        </div>
+        <p id="status">Status: Not connected</p>
+        <button id="connect">Connect Bluetooth</button>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
