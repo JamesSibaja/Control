@@ -1,18 +1,30 @@
-<div class="container">
-    <div class="joysticks">
-        <div class="joystick-container">
-            <div id="joystick1" class="joystick"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Riego Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="joysticks">
+            <div class="joystick-container">
+                <div id="joystick1" class="joystick"></div>
+            </div>
+            <div class="joystick-container">
+                <div id="joystick2" class="joystick"></div>
+            </div>
         </div>
-        <div class="joystick-container">
-            <div id="joystick2" class="joystick"></div>
+        <div class="buttons-container">
+            <button id="water1" class="water-button">Riego IZ</button>
+            <button id="water2" class="water-button">Riego DR</button>
         </div>
+        <p id="status">Status: Not connected</p>
+        <button id="connect">Connect Bluetooth</button>
     </div>
-    <div class="buttons-container">
-        <button id="water1" class="water-button">Riego IZ</button>
-        <button id="water2" class="water-button">Riego DR</button>
-    </div>
-    <p id="status">Status: Not connected</p>
-    <button id="connect">Connect Bluetooth</button>
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
 
 
