@@ -15,31 +15,51 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
 }
 
-#controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
+.joystick-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin: 10px auto;
+    touch-action: none; /* Disable default touch behaviors */
 }
 
-#controls button {
+.joystick {
+    position: absolute;
+    width: 60px;
+    height: 60px;
     background-color: #4CAF50;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    touch-action: none; /* Disable default touch behaviors */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.water-button {
+    background-color: #008CBA;
     color: white;
     border: none;
-    padding: 15px;
+    padding: 15px 30px;
     border-radius: 5px;
-    font-size: 24px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#controls button:active {
-    background-color: #388E3C;
+.water-button:active {
+    background-color: #006F9A;
 }
 
 #connect {

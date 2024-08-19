@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV3 Remote Control</title>
+    <title>Carrito de Riego Control</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div id="controls">
-            <button id="forward">▲</button>
-            <div>
-                <button id="left">◄</button>
-                <button id="stop">⏹</button>
-                <button id="right">►</button>
-            </div>
-            <button id="backward">▼</button>
+        <div class="joystick-container">
+            <div id="joystick1" class="joystick"></div>
         </div>
-        <div id="controlsR">
-            <button id="forwardR">▲</button>
-            <div>
-                <button id="leftR">◄</button>
-                <button id="stopR">⏹</button>
-                <button id="rightR">►</button>
-            </div>
-            <button id="backwardR">▼</button>
+        <div class="joystick-container">
+            <div id="joystick2" class="joystick"></div>
+        </div>
+        <div class="buttons-container">
+            <button id="water1" class="water-button">Salida 1</button>
+            <button id="water2" class="water-button">Salida 2</button>
         </div>
         <p id="status">Status: Not connected</p>
         <button id="connect">Connect Bluetooth</button>
@@ -32,4 +24,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
