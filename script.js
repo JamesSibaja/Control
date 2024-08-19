@@ -59,21 +59,26 @@ function handleDrag(event, joystick, joystickId) {
     let clientY = event.clientY || event.touches[0].clientY;
 
     let rect = joystick.parentElement.getBoundingClientRect();
+    let joystickRect = joystick.getBoundingClientRect();
+    let joystickRadius = joystickRect.width / 2;
+
     let x = clientX - rect.left - rect.width / 2;
     let y = clientY - rect.top - rect.height / 2;
 
     let angle = Math.atan2(y, x);
-    let distance = Math.min(Math.hypot(x, y), rect.width / 2);
+    let maxDistance = (rect.width - joystickRect.width) / 2;
+    let distance = Math.min(Math.hypot(x, y), maxDistance);
 
-    let joystickX = distance * Math.cos(angle);
-    let joystickY = distance * Math.sin(angle);
+    let joystickX = distance * Math.cos(angle) - joystickRadius;
+    let joystickY = distance * Math.sin(angle) - joystickRadius;
 
     joystick.style.transform = `translate(${joystickX}px, ${joystickY}px)`;
 
-    if (distance > rect.width / 4) {
-        sendCommand(joystickId, joystickX, joystickY);
+    if (distance > maxDistance / 4) {
+        sendCommand(joystickId, joystickX + joystickRadius, joystickY + joystickRadius);
     }
 }
+
 
 function stopDrag1() {
     if (isDragging1) {
