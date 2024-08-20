@@ -30,7 +30,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #7c66af;
+    background-color: #4c66af;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -48,15 +48,19 @@
     background-color: #4caf50;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     border-radius: 5px;
     cursor: pointer;
     width: 45%;
+    transition: background-color 0.3s ease;
+}
+
+.water-button.active {
+    background-color: #ff7043;
 }
 
 .water-button:hover {
@@ -67,7 +71,7 @@
     background-color: #007bff;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -85,4 +89,26 @@
     margin-top: 20px;
     font-weight: bold;
     font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .joystick-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .joystick {
+        width: 30px;
+        height: 30px;
+    }
+
+    .water-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #connect {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
