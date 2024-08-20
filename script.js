@@ -5,23 +5,30 @@ let joystick2 = document.getElementById('joystick2');
 let isDragging1 = false;
 let isDragging2 = false;
 
-document.getElementById('connect').addEventListener('click', async () => {
+document.getElementById('connect').addEventListener('click', async function() {
     try {
-        device = await navigator.bluetooth.requestDevice({
-            filters: [{ services: ['battery_service'] }],
-            optionalServices: ['generic_access']
+        // Solicitar al usuario que seleccione cualquier dispositivo Bluetooth disponible
+        const device = await navigator.bluetooth.requestDevice({
+            acceptAllDevices: true
         });
 
+        // Conectar al servidor GATT del dispositivo seleccionado
         const server = await device.gatt.connect();
-        const service = await server.getPrimaryService('battery_service');
-        characteristic = await service.getCharacteristic('battery_level');
 
-        document.getElementById('status').innerText = "Status: Connected";
+        // Actualizar el estado de la conexión en la interfaz
+        document.getElementById('status').textContent = `Connected to ${device.name}`;
+
+        // Guardar el dispositivo y el servidor para su uso posterior
+        window.connectedDevice = device;
+        window.server = server;
+
     } catch (error) {
-        console.log(error);
-        document.getElementById('status').innerText = "Status: Connection failed";
+        // Manejar errores de conexión
+        console.error('Connection failed', error);
+        document.getElementById('status').textContent = 'Connection failed';
     }
 });
+
 
 function setupJoystick(joystick, joystickContainer, startDrag, onDrag, stopDrag) {
     joystick.addEventListener('mousedown', startDrag);
