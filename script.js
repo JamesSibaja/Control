@@ -119,8 +119,8 @@ function sendCommand(control, x, y) {
 setupJoystick(joystick1, joystick1.parentElement, startDrag1, onDrag1, stopDrag1);
 setupJoystick(joystick2, joystick2.parentElement, startDrag2, onDrag2, stopDrag2);
 
-document.getElementById('water1').addEventListener('click', () => sendCommand('water1'));
-document.getElementById('water2').addEventListener('click', () => sendCommand('water2'));
+// document.getElementById('water1').addEventListener('click', () => sendCommand('water1'));
+// document.getElementById('water2').addEventListener('click', () => sendCommand('water2'));
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener('deviceorientation', function (event) {
