@@ -137,3 +137,22 @@ if (window.DeviceOrientationEvent) {
         }
     });
 }
+
+document.getElementById('water1').addEventListener('click', function() {
+    toggleButton(this, 1);
+});
+
+document.getElementById('water2').addEventListener('click', function() {
+    toggleButton(this, 2);
+});
+
+function toggleButton(button, id) {
+    button.classList.toggle('active');
+    let isActive = button.classList.contains('active');
+    sendWaterCommand(id, isActive);
+}
+
+function sendWaterCommand(id, isActive) {
+    // Aquí se enviaría el comando al EV3
+    console.log(`Riego ${id} está ${isActive ? 'activado' : 'desactivado'}`);
+}
